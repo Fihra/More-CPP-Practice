@@ -18,7 +18,7 @@ void showMenu()
 	}
 }
 
-int MenuSelect()
+int getInput()
 {
 	cout << "Enter Selection: " << endl;
 	int input;
@@ -27,14 +27,9 @@ int MenuSelect()
 	return input;
 }
 
-int main()
+void processSelection(int option)
 {
-    cout << "Functions" << endl; 
-
-	showMenu();
-	int selection = MenuSelect();
-
-	switch (selection)
+	switch (option)
 	{
 	case 1:
 		cout << "Searching . . ." << endl;
@@ -49,5 +44,15 @@ int main()
 		cout << "Please select an item from the menu." << endl;
 
 	}
+}
+
+int main()
+{
+    cout << "Functions" << endl; 
+
+	showMenu();
+	int selection = getInput();
+	processSelection(selection);
+
 
 }
